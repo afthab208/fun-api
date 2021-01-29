@@ -44,7 +44,7 @@ app.get('/meme', (req, res) => {
   res.json(randomMeme());
 });
 
-app.get('/twitter?=:feed',async  (req, res) => {
+app.get('/twitter/:feed',async  (req, res) => {
   
   const img = await canvas.loadImage('https://teckspace.files.wordpress.com/2011/08/twitter1.jpg')
 
@@ -60,7 +60,7 @@ app.get('/twitter?=:feed',async  (req, res) => {
   
 });
 
-app.get('/kowalski?=:feed',async  (req, res) => {
+app.get('/kowalski/:feed',async  (req, res) => {
   
   const img = await canvas.loadImage('https://i.redd.it/nis9eqae7qu11.png')
 
@@ -91,7 +91,7 @@ app.get('/kowalski?=:feed',async  (req, res) => {
   
 
 
-app.get('/woah?=:feed',async  (req, res) => {
+app.get('/woah/:feed',async  (req, res) => {
   
   const img = await canvas.loadImage('https://i.pinimg.com/474x/d0/5d/36/d05d367a5e0153bbd104805868d080a1.jpg')
 
@@ -109,7 +109,7 @@ app.get('/woah?=:feed',async  (req, res) => {
 
 
 
-app.get('/trump?=:feed',async  (req, res) => {
+app.get('/trump/:feed',async  (req, res) => {
   
   const img = await canvas.loadImage('https://i.imgflip.com/1i7abe.jpg')
 
@@ -126,7 +126,7 @@ app.get('/trump?=:feed',async  (req, res) => {
   
 });
 
-app.get('/temp?=:feed',async  (req, res) => {
+app.get('/temp/:feed',async  (req, res) => {
   
   const img = await canvas.loadImage('https://i.imgflip.com/41exj5.png')
 
@@ -193,7 +193,7 @@ app.get('/deadinside',async  (req, res) => {
 
 
 
-app.get('/cleverbot?=:feed', (req, res) => {
+app.get('/cleverbot/feed', (req, res) => {
 
   const message = req.params.feed
 
@@ -204,7 +204,7 @@ app.get('/cleverbot?=:feed', (req, res) => {
     });
 })
 
-app.get('/covid?country=:feed', (req, res) => {
+app.get('/covid/:feed', (req, res) => {
   
   const countries = req.params.feed
 
