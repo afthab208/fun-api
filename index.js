@@ -193,7 +193,7 @@ app.get('/deadinside',async  (req, res) => {
 
 
 
-app.get('/cleverbot/feed', (req, res) => {
+app.get('/cleverbot/:feed', (req, res) => {
 
   const message = req.params.feed
 
