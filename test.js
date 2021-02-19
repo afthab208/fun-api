@@ -1,2 +1,0 @@
-const { randomMeme } = require('./handler');
-
