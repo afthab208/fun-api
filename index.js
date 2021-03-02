@@ -7,6 +7,7 @@
  const { kill } = require('./ded');
  const { Canvas } = require('canvas-constructor')
 const canvas = require('canvas')
+const axios = require('axios');
 
  app.listen(port, function() {
    console.log('app started');
@@ -73,6 +74,32 @@ app.get('/woah',async  (req, res) => {
 
   res.set({'Content-Type': 'image/png'})
   res.send(image)
+
+  
+});
+
+
+
+app.get('/lyrics',async  (req, res) => {
+  
+ 
+  const title = req.param('song')
+  const author = req.param('author')
+  const url = `https://api.lyrics.ovh/v1/${author}/${title}`
+
+    let data, response;
+        try {
+            response = await axios.get(url);
+            data = response.data;
+        } catch (e) {
+            return res.send(':( No Lyrics Found')
+        }
+  const lyricsxd = data.lyrics
+  res.send(`{"lyrics": "${lyricsxd}"}`)
+
+  
+  
+
 
   
 });
